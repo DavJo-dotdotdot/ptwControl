@@ -76,20 +76,23 @@ void arrCheck(int matArr[]) {
     for (int i = 0; i < totalRows; ++i) {
         for (int j = 0; j < totalColumns; ++j) {
 
-            currentPosX = j;
-            currentPosY = i;
-
-            compMat[i][j] = matArr[j];
 
             // own function?
             // should register ball movement
-          if (compMat[i][j] <= arrVal * arrValThreshold) {
+            if (compMat[i][j] <= arrVal * arrValThreshold) {
+
+                currentPosX = j;
+                currentPosY = i;
+
+                compMat[i][j] = matArr[j];
 
                 // ball direction
                 if (currentPosY < lastPosY) {
                     // ball down test
                     cout << "Ball down" << endl;
-                    
+
+
+
                 }
                 else if (currentPosY > lastPosY) {
                     // Ball up test

@@ -18,10 +18,16 @@
 		// Array/matrix attributes
 		int ptwCycle;
 		int lastPosX, lastPosY, currentPosX, currentPosY;
-		int ptwInternMat[7][10] = { 0 };
 
+		int piMatLeft[7][10] = { 0 };  int piMatRight[7][10] = { 0 };
+
+
+		// Array/matrix thresholds
+		int arrVal;
+		int arrValThreshold;
+		
 		// organize response within
-		int ballPosition(int arr[]);
+		int ballPosition(int extArr[], int interArr[][10]);
 
 		// compare matrix, uses reactToBall, all functions happen within here?
 		void compareVal();
