@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ptwControl.cpp" />
+    <ClCompile Include="ptwHeader.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ptwHeader.h" />
