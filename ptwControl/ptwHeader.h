@@ -46,8 +46,11 @@
 		
 		/* ---------------------------------------------------------------------------- */
 
+		// take from tty0, convert c to c++, string to int, int to array
+		int externalRead();
+
 		// organize response within
-		int ballPosition(int extArr[], int interArr[][10]);
+		int ballPosition(int extArr[], int interArr[8][11]);
 
 		// light on sensor set, call at beginning and in ball position
 		int setLightLevel(int extArr[]);

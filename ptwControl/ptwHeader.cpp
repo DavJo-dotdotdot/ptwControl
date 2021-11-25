@@ -4,7 +4,7 @@
 using namespace std;
 
 // called for both array sets -- use left array and right array
-int ptwClass::ballPosition(int extArr[], int interMat[][10]) {
+int ptwClass::ballPosition(int extArr[], int interMat[8][11]) {
 
     // convert ext arr to array of ints
     // becomes eight sets of arrays
