@@ -1,7 +1,22 @@
 #pragma once
 
+#include <iostream>
+#include <istream>
+#include <atomic>
+#include <sstream>
+#include <vector>
+#include <chrono>
+#include <numeric>
+#include <fcntl.h>
+#include <errno.h>
+// #include <termios.h>
+// #include <unistd.h>
+
 	class ptwClass {
 	public:
+
+		// Game states
+		bool gameState;
 
 		// Table dimensions
 		float tableLength = 750.0; float tableWidth = 450.0; float pinDistance = 10.0;
@@ -19,15 +34,23 @@
 		int ptwCycle;
 		int lastPosX, lastPosY, currentPosX, currentPosY;
 
-		int piMatLeft[7][10] = { 0 };  int piMatRight[7][10] = { 0 };
-
+		int piMatLeft[8][11] = { 0 };  int piMatRight[8][11] = { 0 };
+		
+		// Sensor values
+		int lightLevelMed;
+		float lightThreshold = 0.7;
 
 		// Array/matrix thresholds
 		int arrVal;
 		int arrValThreshold;
 		
+		/* ---------------------------------------------------------------------------- */
+
 		// organize response within
 		int ballPosition(int extArr[], int interArr[][10]);
+
+		// light on sensor set, call at beginning and in ball position
+		int setLightLevel(int extArr[]);
 
 		// compare matrix, uses reactToBall, all functions happen within here?
 		void compareVal();
@@ -40,4 +63,10 @@
 
 		// Calculate failure/no failure
 		int failToWin(int victoryState);
+
+		// If last row and last column is hit, after 1.5 seconds: 
+		void gameOver();
+
+		void startGame();
+	
 	};

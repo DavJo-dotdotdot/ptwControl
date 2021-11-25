@@ -1,8 +1,7 @@
+#pragma once
 #include "ptwHeader.h"
-#include <iostream>
 
 using namespace std;
-ptwClass ptw;
 
 // called for both array sets -- use left array and right array
 int ptwClass::ballPosition(int extArr[], int interMat[][10]) {
@@ -32,23 +31,40 @@ int ptwClass::ballPosition(int extArr[], int interMat[][10]) {
                     cout << "Ball up" << endl;
 
                 }
-
+                
                 lastPosX = currentPosX;
                 lastPosY = currentPosY;
             }
         }
     }
+
 }
 
-void ptwClass::compareVal()
-{
+void ptwClass::compareVal() {
+
+
 }
 
-void ptwClass::fireFlipper()
-{
+void ptwClass::fireFlipper() {
+    //send signal to 
+
+}
+
+int ptwClass::setLightLevel(int extArr[]) {
+    
+    for (int i = 0; i < columns/2; ++i) {
+        if (i == columns / 2) {
+
+            lightLevelMed = extArr[i];
+        }
+    }
+
+    return lightLevelMed;
 }
 
 int ptwClass::ballDirection() {
+
+
 
     return 0;
 }
@@ -56,6 +72,19 @@ int ptwClass::ballDirection() {
 // 
 int ptwClass::failToWin(int victoryState) {
 
+
+
 	return 0;
 }
 
+void ptwClass::startGame() {
+       
+    // hold fire on pins for five seconds while game state = false
+    // pins unlock from player control and instead fires on their own two times to indicate machine play
+}
+
+void ptwClass::gameOver() {
+
+    // if start sensor is covered for 3 seconds =>
+    // game state = false
+}
